@@ -1,22 +1,6 @@
-# New Relic Platform MySQL Plugin - Java
+# New Relic Platform Galera Plugin - Java
 
-Find the New Relic MySQL plugin in the [New Relic storefront](http://newrelic.com/plugins/new-relic-inc/52)
-
-Find the New Relic MySQL plugin in [Plugin Central](https://rpm.newrelic.com/extensions/com.newrelic.plugins.mysql.instance)
-
-----
-
-## What's new in V2?
-
-This plugin has been upgraded to V2 of the New Relic Platform Java SDK.  For version 2 of the Java SDK, we have made several changes to help make the installation experience more uniform for plugins.  The changes include:
-
-* 'newrelic.properties' file is now 'newrelic.json'
-* Plugin configuration is now done through the 'plugin.json' file
-* Logging has been made more robust and easier to use.
-* Jar distributables now have a well-defined name (i.e. plugin.jar)
-* Configuration files are now located in a well-defined location (i.e. './config' off the root)
-
-More information on these changes (including how to configure logging, license keys, and the plugin itself) can be found [here](https://github.com/newrelic-platform/metrics_publish_java#configuration-options).  If you have any feedback, please don't hesitate to reach out to us through our forums [here](https://discuss.newrelic.com/category/platform-plugins/platform-sdk).
+A fork of New Relic Platform MySQL Plugin Java
 
 ----
 
@@ -35,40 +19,14 @@ The requirements for running this plugin are:
 
 ## Installation
 
-This plugin can be installed one of the following ways:
-
-* [Option 1 - New Relic Platform Installer](#option-1--install-with-the-new-relic-platform-installer)
-* [Option 2 - Chef and Puppet Install Scripts](#option-2--install-via-chef-or-puppet)
-* [Option 3 - Manual Install](#option-3--install-manually)
-
-### Option 1 - Install with the New Relic Platform Installer
-
-The New Relic Platform Installer (NPI) is a simple, lightweight command line tool that helps you easily download, configure and manage New Relic Platform Plugins.  To learn more simply go to [our forum category](https://discuss.newrelic.com/category/platform-plugins/platform-installer) and checkout the ['Getting Started' section](https://discuss.newrelic.com/t/getting-started-for-the-platform-installer/842).  If you have any questions, concerns or feedback, please do not hesitate to reach out through the forums as we greatly appreciate your feedback!
-
-Once you've installed the NPI tool, run the following command:
-
-```
-	./npi install com.newrelic.plugins.mysql.instance
-```	
-
-This command will take care of the creation of `newrelic.json` and `plugin.json` configuration files.  See the [configuration information](#configuration-information) section for more information.
-
-### Option 2 - Install via Chef or Puppet
-
-For [Chef](http://www.getchef.com) and [Puppet](http://puppetlabs.com) support see the New Relic plugin's [Chef Cookbook](http://community.opscode.com/cookbooks/newrelic_plugins) and [Puppet Module](https://forge.puppetlabs.com/newrelic/newrelic_plugins).
-
-Additional information on using Chef and Puppet with New Relic is available in New Relic's [documentation](https://docs.newrelic.com/docs/plugins/plugin-installation-with-chef-and-puppet).
-
-### Option 3 - Install Manually (Non-standard)
-
 #### Step 1 - Downloading and Extracting the Plugin
 
-The latest version of the plugin can be downloaded [here](https://github.com/newrelic-platform/newrelic_mysql_java_plugin/tree/master/dist).  Once the plugin is on your box, extract it to a location of your choosing.
+The latest version of the plugin can be downloaded [here](https://github.com/pondix/newrelic_galera_java_plugin/tree/master/dist).  Once the plugin is on your box, extract it to a location of your choosing.
 
-**note** - This plugin is distributed in tar.gz format and can be extracted with the following command on Unix-based systems (Windows users will need to download a third-party extraction tool or use the [New Relic Platform Installer](https://discuss.newrelic.com/t/getting-started-with-the-platform-installer/842)):
+**note** - This plugin is distributed in tar.gz format and can be extracted with the following command on Unix-based systems (Windows users will need to download a third-party extraction tool) 
 
 ```
-	tar -xvzf newrelic_mysql_plugin-X.Y.Z.tar.gz
+	tar -xvzf newrelic_galera_plugin-X.Y.Z.tar.gz
 ```
 
 #### Step 2 - Configuring the Plugin
@@ -92,7 +50,7 @@ For more information on JVM server class machines and the `-Xmx` JVM argument, s
  
 #### Step 4 - Keeping the Plugin Running
 
-Step 3 showed you how to run the plugin; however, there are several problems with running the process directly in the foreground (For example, when the machine reboots the process will not be started again).  That said, there are several common ways to keep a plugin running, but they do require more advanced knowledge or additional tooling.  We highly recommend considering using the [New Relic Platform Installer](https://discuss.newrelic.com/t/getting-started-with-the-platform-installer/842) or Chef/Puppet scripts for installing plugins as they will take care of most of the heavy lifting for you.  
+Step 3 showed you how to run the plugin; however, there are several problems with running the process directly in the foreground (For example, when the machine reboots the process will not be started again).  That said, there are several common ways to keep a plugin running, but they do require more advanced knowledge or additional tooling. Startup scripts for RHEL / Debian / Ubuntu (Upstart) can be found [here](https://github.com/pondix/newrelic_galera_java_plugin/tree/master/scripts/etc)   
 
 If you prefer to be more involved in the maintaince of the process, consider one of these tools for managing your plugin process (bear in mind that some of these are OS-specific):
 
@@ -229,21 +187,7 @@ The MySQL Plugin is capable of reporting different sets of metrics by configurin
 
 ## Support
 
-Plugin support and troubleshooting assistance can be obtained by visiting [support.newrelic.com](https://support.newrelic.com)
-
-### Frequently Asked Questions
-
-**Q: Does this plugin support Amazon RDS?**
-
-**A:** The MySQL plugin can report metrics for Amazon RDS MySQL instances as well. To do so, configure the `plugin.json` as mentioned above in [Configure your MySQL properties](#configure-your-mysql-properties) and set your `host` attribute to the RDS instance endpoint without the port. The endpoint can be found in the AWS console for your instance. For more information regarding the RDS endpoint see the [Amazon RDS documentation](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ConnectToInstance.html).
-
-E.g. `database1.abcjiasdocdsf.us-west-1.rds.amazonaws.com`
-
-The `user` and `passwd` attributes should be the RDS master user and master password, or a user and password that has correct privileges. See [Create MySQL user if necessary](#create-mysql-user-if-necessary) for more information. 
-
-**Q: Do you support MariaDB?**
-
-**A:** The short answer is 'no'.  While we understand that MariaDB is supposed to be functionally equivalent to MySQL, we have received feedback from some users that the MySQL plugin does not work against their MariaDB instances.  We may address this at some point in the future, but currently do not actively support this scenario.
+Plugin support and troubleshooting assistance is available on (https://github.com/pondix/newrelic_galera_java_plugin) or via email on 'pondix at gmail dot com' 
 
 ----
 
