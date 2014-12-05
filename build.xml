@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project name="newrelic_mysql_extension" default="dist" basedir=".">
+<project name="newrelic_galera_extension" default="dist" basedir=".">
 
     <property name="version" value="2.0.0"/>
-    <property name="filename" value="newrelic_mysql_plugin-${version}"/>
+    <property name="filename" value="newrelic_galera_plugin-${version}"/>
     <property name="jarfile" value="plugin.jar"/>
     <property name="tarfile" value="${filename}.tar.gz"/>
 
@@ -58,7 +58,7 @@
                 <attribute name="Built-Date" value="${TODAY}"/>
                 <attribute name="Specification-Version" value="${version}"/>
                 <attribute name="Implementation-Version" value="${version} ${TODAY}"/>
-                <attribute name="Main-Class" value="com.newrelic.plugins.mysql.instance.Main"/>
+                <attribute name="Main-Class" value="com.newrelic.plugins.galera.instance.Main"/>
             </manifest>
             <fileset dir="${build.classes.dir}"/>
             <zipfileset src="${platform-metrics-java}"/>

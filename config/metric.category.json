@@ -17,4 +17,7 @@
                            "value_metrics" : "", "counter_metrics" : "", },
   { "category" : "innodb_status", "SQL" : "SHOW ENGINE INNODB STATUS", "result" : "special", 
                            "value_metrics" : "", "counter_metrics" : "", },
+{ "category" : "galera", "SQL" : "SHOW STATUS like 'wsrep%'", "result" : "set",
+		            "value_metrics" : "wsrep_local_send_queue,wsrep_local_send_queue_max,wsrep_local_send_queue_min,wsrep_local_send_queue_avg,wsrep_local_recv_queue,wsrep_local_recv_queue_max,wsrep_local_recv_queue_min,wsrep_local_recv_queue_avg,wsrep_local_cached_downto,wsrep_cert_deps_distance,wsrep_apply_oooe,wsrep_apply_oool,wsrep_apply_window,wsrep_commit_oooe,wsrep_commit_oool,wsrep_commit_window,wsrep_local_state,wsrep_cert_index_size,wsrep_cert_interval,wsrep_cluster_size,wsrep_cluster_status" 
+			    "counter_metrics": "wsrep_last_committed,wsrep_replicated,wsrep_replicated_bytes,wsrep_repl_keys,wsrep_repl_keys_bytes,wsrep_repl_data_bytes,wsrep_repl_other_bytes,wsrep_received,wsrep_received_bytes,wsrep_local_commits,wsrep_local_cert_failures,wsrep_local_replays,wsrep_flow_control_paused_ns,wsrep_flow_control_paused,wsrep_flow_control_sent,wsrep_flow_control_recv,wsrep_local_bf_aborts,wsrep_local_index" }
 ]
