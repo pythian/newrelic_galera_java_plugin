@@ -1,7 +1,7 @@
-package com.newrelic.plugins.mysql.instance;
+package com.newrelic.plugins.galera.instance;
 
-import static com.newrelic.plugins.mysql.util.Constants.COMMA;
-import static com.newrelic.plugins.mysql.util.Constants.EMPTY_STRING;
+import static com.newrelic.plugins.galera.util.Constants.COMMA;
+import static com.newrelic.plugins.galera.util.Constants.EMPTY_STRING;
 
 import java.util.Arrays;
 import java.util.HashMap;

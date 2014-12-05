@@ -1,4 +1,4 @@
-package com.newrelic.plugins.mysql.instance;
+package com.newrelic.plugins.galera.instance;
 
 import com.newrelic.metrics.publish.Runner;
 import com.newrelic.metrics.publish.configuration.ConfigurationException;

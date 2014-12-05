@@ -1,6 +1,6 @@
-package com.newrelic.plugins.mysql;
+package com.newrelic.plugins.galera;
 
-import static com.newrelic.plugins.mysql.util.Constants.*;
+import static com.newrelic.plugins.galera.util.Constants.*;
 
 import com.newrelic.metrics.publish.processors.EpochCounter;
 

@@ -1,6 +1,6 @@
-package com.newrelic.plugins.mysql.instance;
+package com.newrelic.plugins.galera.instance;
 
-import static com.newrelic.plugins.mysql.util.Constants.*;
+import static com.newrelic.plugins.galera.util.Constants.*;
 
 import java.sql.Connection;
 import java.util.Arrays;
@@ -12,8 +12,8 @@ import java.util.Set;
 
 import com.newrelic.metrics.publish.Agent;
 import com.newrelic.metrics.publish.util.Logger;
-import com.newrelic.plugins.mysql.MetricMeta;
-import com.newrelic.plugins.mysql.MySQL;
+import com.newrelic.plugins.galera.MetricMeta;
+import com.newrelic.plugins.galera.MySQL;
 
 /**
  * This class creates a specific MySQL agent that is used to obtain a MySQL database connection, 
@@ -26,8 +26,8 @@ public class MySQLAgent extends Agent {
     
     private static final Logger logger = Logger.getLogger(MySQLAgent.class);
     
-    private static final String GUID = "com.newrelic.plugins.mysql.instance";
-    private static final String version = "2.0.0";
+    private static final String GUID = "com.newrelic.plugins.galera.instance";
+    private static final String version = "1.0.0";
 
     public static final String AGENT_DEFAULT_HOST = "localhost"; // Default values for MySQL Agent
     public static final String AGENT_DEFAULT_USER = "newrelic";

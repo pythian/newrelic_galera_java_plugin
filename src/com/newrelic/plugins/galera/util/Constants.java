@@ -1,4 +1,4 @@
-package com.newrelic.plugins.mysql.util;
+package com.newrelic.plugins.galera.util;
 
 import java.util.regex.Pattern;
 
