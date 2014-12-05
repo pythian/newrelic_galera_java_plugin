@@ -4,6 +4,17 @@ A fork of New Relic Platform MySQL Plugin Java
 
 ----
 
+## Metrics Included:
+
+- Excessive replication conflicts (high rate of wsrep_local_cert_failures and wsrep_local_bf_aborts)
+- Excessive Flow control messages (wsrep_flow_control_sent/ wsrep_flow_control_recv)
+- Large replication queues (wsrep_local_recv_queue).
+- Queue sizes (wsrep_local_recv_queue, wsrep_local_send_queue)
+- Flow control (wsrep_flow_control_sent, wsrep_flow_control_recv)
+- Number of transactions in and out of this node (wsrep_replicated, wsrep_received)
+- Number of transactions in and out in bytes (wsrep_replicated_bytes, wsrep_received_bytes)
+- Replication conflicts (wsrep_local_cert_failures and wsrep_local_bf_aborts)
+
 ## Requirements
 
 The requirements for running this plugin are:
