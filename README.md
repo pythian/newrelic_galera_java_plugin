@@ -210,5 +210,5 @@ This plugin uses an extensible architecture that allows you to define new MySQL 
 
 ## Credits
 
-The MySQL plugin was originally authored by [Ronald Bradford](http://ronaldbradford.com/) of [EffectiveMySQL](http://effectivemysql.com/) and the maintainers New Relic. 
+The MySQL plugin was originally authored by [Ronald Bradford](http://ronaldbradford.com/) of [EffectiveMySQL](http://effectivemysql.com/) and the maintainers of the "New Relic Platform MySQL Plugin Java" [New Relic]. 
 
