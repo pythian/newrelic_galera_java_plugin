@@ -14,6 +14,8 @@ A fork of New Relic Platform MySQL Plugin Java
 - Number of transactions in and out of this node (wsrep_replicated, wsrep_received)
 - Number of transactions in and out in bytes (wsrep_replicated_bytes, wsrep_received_bytes)
 - Replication conflicts (wsrep_local_cert_failures and wsrep_local_bf_aborts)
+- InnoDB Buffer Pool Metrics
+- Connection Metrics
 
 ## Requirements
 
