@@ -3,7 +3,7 @@
     {
       "name"    : "Localhost",
       "host"    : "localhost",
-      "metrics" : "status,newrelic",
+      "metrics" : "status,newrelic,galera",
       "user"    : "USER_NAME_HERE",
       "passwd"  : "USER_PASSWD_HERE"
     }
